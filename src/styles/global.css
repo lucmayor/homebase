@@ -1,5 +1,14 @@
 :root {
-    background-color: black;
+    background-color: #111111;
+}
+
+a {
+    color: #f09a9a;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: white;
 }
 
 .center {

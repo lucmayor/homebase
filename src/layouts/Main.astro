@@ -5,10 +5,14 @@ const { heading, title } = Astro.props;
 ---
 
 <html>
+    <head>
+        <link rel="icon" type="image/jpg" href="favicon.svg"/>
+        <title>{title}</title>
+    </head>
     <div class="container">
         <main>
             <article>
-                test
+                <slot />
             </article>
         </main>
         <Navbar />
@@ -37,7 +41,8 @@ const { heading, title } = Astro.props;
         width: 80ch;
         border: 1px solid white;
         padding: 0.5rem;
-        min-height: 500px;
+        /* girl idk */
+        min-height: 80vh;
         flex-grow: 1;
         display: flex;
         flex-direction: column;

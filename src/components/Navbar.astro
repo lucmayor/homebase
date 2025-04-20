@@ -1,5 +1,6 @@
 ---
-
+    import Webrings from "./Webrings.astro"
+    import Lastfm from "./Lastfm.astro"
 ---
 
 <html>
@@ -7,12 +8,13 @@
         <img src="https://a.ppy.sh/7314046?1744858825.jpeg" width="100px" height="100px">
         <h>alkalde</h>
         <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>projects</li>
-            <li>blog</li>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="/projects">projects</a></li>
+            <li><a href="/blog">blog</a></li>
         </ul>
-
+        <!-- <Lastfm /> -->
+        <Webrings />
     </div>
 </html>
 
@@ -24,6 +26,7 @@
         align-items: center;
         color: white;
         min-width: 10%;
+        max-width: 10%;
     }
 
     ul {
@@ -33,18 +36,27 @@
         list-style-type: none;
     }
 
+    ul li::before {
+        border-top: 1px dotted white;
+    }
+
     li {
         min-width: 100%;
         text-align: center;
         padding-top: 5px;
-        padding-bottom: 2px;
-        border-bottom: 1px dotted white;
+        padding-bottom: 5px;
     }
 
     h {
-        padding: 0%;
+        padding: 1%;
         font-size: 20px;
     }
+
+    h2 {
+        padding: 0%;
+        font-size: 15px;
+    }
+
 
     img {
         border: 1px solid lightblue;

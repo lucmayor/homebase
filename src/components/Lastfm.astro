@@ -1,0 +1,35 @@
+---
+    async function np() {
+        const md = await fetch(import.meta.env.URL + '/api/lfm', {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        const r = await md.json();
+        const res = [
+            r.album_art, r.artist, r.track_name, r.album
+        ];
+        return res
+    }
+
+    const res = await np();
+    // idk what to set this to LMFAO
+    setTimeout(np, 3000000);
+---
+
+<div>
+    <song>
+        <img id="album_art" src={res[0]} width="64px"/>
+        <span id="artist">{res[1]}</span>
+        <span id="track_name">{res[2]}</span>
+        <span id="album">{res[3]}</span>
+    </song>
+</div>
+
+
+<style>
+    song {
+        border: 2px white;
+    }
+</style>
