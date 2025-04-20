@@ -1,5 +1,6 @@
 export const prerender = false;
 import "dotenv/config";
+
 export const GET = async () => {
   try {
     const api_key = process.env.LFM_API;
