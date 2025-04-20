@@ -1,47 +1,45 @@
 ---
-	import Layout from "../layouts/Main.astro"
-	import Lastfm from "../components/Lastfm.svelte"
+import Layout from "../layouts/Main.astro";
+import Lastfm from "../components/Lastfm.svelte";
 ---
 
 <Layout heading="home" title="lucsitelucsitelucsitelucsite">
-	<div class="main">
-		hello! my name is luc. you likely know me as <i>alkalde</i>.
+  <div class="main">
+    hello! my name is luc. you likely know me as <i>alkalde</i>.
 
-		<div>
-			i will be working on this site over the next week or two...
-		</div>
+    <div>i will be working on this site over the next week or two...</div>
 
-		<div class="additive">
-			<Lastfm />
-		</div>
+    <div class="additive">
+      <Lastfm client:load />
+    </div>
 
-		<div>
-			<img src="/buttons/gothzip.png" />
-			<img src="/buttons/Sprite-0004.png" />
-			<img src="/buttons/lain.gif" />
-			<img src="/buttons/misc-cdda.png" />
-		</div>
-		<div>
-			<img src="/buttons/Mental Wi-Fi by prosaix.gif" />
-		</div>
-		<div>
-			<img src="/buttons/lgbt_enby.png" />
-		</div>
-	</div>
+    <div>
+      <img src="/buttons/gothzip.png" />
+      <img src="/buttons/Sprite-0004.png" />
+      <img src="/buttons/lain.gif" />
+      <img src="/buttons/misc-cdda.png" />
+    </div>
+    <div>
+      <img src="/buttons/Mental Wi-Fi by prosaix.gif" />
+    </div>
+    <div>
+      <img src="/buttons/lgbt_enby.png" />
+    </div>
+  </div>
 </Layout>
 
 <style>
-	.main {
-		text-wrap: stable;
-		text-align: center;
-		align-items: center;
-		padding: 5px;
-		min-height: 100%;
-	}
+  .main {
+    text-wrap: stable;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    min-height: 100%;
+  }
 
-	.additive {
-		bottom: 0;
-		align-items: end;
-		padding: 10px;
-	}
+  .additive {
+    bottom: 0;
+    align-items: end;
+    padding: 10px;
+  }
 </style>

@@ -4,73 +4,71 @@ import "../styles/global.css";
 const { heading, title } = Astro.props;
 ---
 
-<html>
-    <head>
-        <link rel="icon" type="image/jpg" href="thummm.png"/>
-        <title>{title}</title>
-    </head>
-    <div class="container">
-        <main>
-            <article>
-                <slot />
-            </article>
-            <div class="creds">
-                site developed by <a>@FALCO_PLAYER</a> get it twisted.
-            </div>
-        </main>
-        <Navbar />
+<head>
+  <link rel="icon" type="image/jpg" href="thummm.png" />
+  <title>{title}</title>
+</head>
+<div class="container">
+  <main>
+    <article>
+      <slot />
+    </article>
+    <div class="creds">
+      site developed by <a>@FALCO_PLAYER</a> get it twisted.
     </div>
-</html>
+  </main>
+  <Navbar />
+</div>
 
 <style>
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height: 60vh;
-        max-width: 60%;
-        /* min-width: 100%; */
-    }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 60vh;
+    max-width: 60%;
+    /* min-width: 100%; */
+  }
 
-    .creds {
-        padding-top: 2px;
-        text-align: left;
-        font-style: italic;
-        font-size: .7rem;
-        color: #7a6060;
-    }
-    
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .creds {
+    padding-top: 2px;
+    text-align: left;
+    font-style: italic;
+    font-size: 0.7rem;
+    color: #7a6060;
+  }
 
-    article {
-        width: 80ch;
-        border: 1px solid white;
-        padding: 0.5rem;
-        /* girl idk */
-        min-height: 80vh;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        /* text rel */
-        color: white;
-    }
+  article {
+    width: 80ch;
+    border: 1px solid white;
+    padding: 0.5rem;
+    /* girl idk */
+    min-height: 80vh;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .content {
-        grid-area: main;
-        display: grid;
-        grid-template-rows: 1;
-        grid-template-columns: 1;
-        flex-grow: 1;
-    }
+    /* text rel */
+    color: white;
+  }
 
-    .content > :global(*) {
-        grid-row: 1;
-        grid-column: 1;
-    }
+  .content {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 1;
+    flex-grow: 1;
+  }
+
+  .content > :global(*) {
+    grid-row: 1;
+    grid-column: 1;
+  }
 </style>

@@ -1,77 +1,78 @@
 ---
-    import Webrings from "./Webrings.astro"
+import Webrings from "./Webrings.astro";
 ---
 
-<html>
-    <div>
-        <img src="https://a.ppy.sh/7314046?1744858825.jpeg" width="100px" height="100px">
-        <h>alkalde</h>
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li><a href="/projects">projects</a></li>
-            <li><a href="/blog">blog</a></li>
-        </ul>
-        webrings
-        <Webrings />
-    </div>
-</html>
+<div>
+  <img
+    src="https://a.ppy.sh/7314046?1744858825.jpeg"
+    width="100px"
+    height="100px"
+  />
+  <h>alkalde</h>
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/about">about</a></li>
+    <li><a href="/projects">projects</a></li>
+    <li><a href="/blog">blog</a></li>
+  </ul>
+  webrings
+  <Webrings />
+</div>
 
 <style>
-    div {
-        padding: 1px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        min-width: 10%;
-        max-width: 10%;
-    }
+  div {
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    min-width: 10%;
+    max-width: 10%;
+  }
 
-    ul {
-        min-width: 80%;
-        padding: 0;
-        list-style: none;
-        list-style-type: none;
-    }
+  ul {
+    min-width: 80%;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+  }
 
-    ul li::before {
-        border-top: 1px dotted white;
-    }
+  ul li::before {
+    border-top: 1px dotted white;
+  }
 
-    li {
-        min-width: 100%;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
+  li {
+    min-width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 
-    h {
-        padding: 1%;
-        font-size: 20px;
-    }
+  h {
+    padding: 1%;
+    font-size: 20px;
+  }
 
-    h2 {
-        padding: 0%;
-        font-size: 15px;
-    }
+  h2 {
+    padding: 0%;
+    font-size: 15px;
+  }
 
+  img {
+    border: 1px solid lightblue;
+  }
 
-    img {
-        border: 1px solid lightblue;
-    }
+  #statuscafe {
+    padding: 0.5em;
+    border: 1px solid midnightblue;
+    min-width: 100%;
+  }
 
-    #statuscafe {
-        padding: .5em;
-        border: 1px solid midnightblue;
-        min-width: 100%;
-    }
+  #statuscafe-username {
+    margin-bottom: 0.5em;
+  }
 
-    #statuscafe-username {
-        margin-bottom: .5em;
-    }
-
-    #statuscafe-content {
-        margin: 0 1em 0.5em 1em;
-    }
+  #statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+  }
 </style>
