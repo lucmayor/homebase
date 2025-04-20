@@ -1,6 +1,8 @@
+export const prerender = false;
+
 export const GET = async () => {
     try {
-        const api_key = "1c931c76222427aeea221ecfcf1cf37c";
+        const api_key = import.meta.env.LASTFM_API_KEY;
         const username = 'luc';
         const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${api_key}&format=json`,
             {

@@ -4,7 +4,7 @@
     async function np() {
         const api_url = new URL('/api/lfm', SITE_URL).toString();
 
-        const md = await fetch(api_url, {
+        const md = await fetch('/api/lfm', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
