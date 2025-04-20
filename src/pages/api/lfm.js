@@ -1,6 +1,6 @@
-export default async function handler(request, response) {
+export const GET = async () => {
     try {
-        const api_key = import.meta.env.LASTFM_API_KEY;
+        const api_key = "1c931c76222427aeea221ecfcf1cf37c";
         const username = 'luc';
         const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${api_key}&format=json`,
             {
@@ -16,14 +16,20 @@ export default async function handler(request, response) {
             album: recent.album['#text'],
             album_art: recent.image[1]['#text'],
         };
-        // response.status(200).json(np);
 
-        return {
-            status_code: 200,
-            body: np
-        }
+        return new Response(JSON.stringify(np), {
+            status: 200,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
     } catch (e) {
         console.error(e);
-        response.status(500).json({error: e.message});
+        return new Response(JSON.stringify({error: e.message}), {
+            status: 500,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
     }
 }

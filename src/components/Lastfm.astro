@@ -1,6 +1,10 @@
 ---
+    const SITE_URL = import.meta.env.URL || 'http://localhost:4321';
+
     async function np() {
-        const md = await fetch(import.meta.env.URL + '/api/lfm', {
+        const api_url = new URL('/api/lfm', SITE_URL).toString();
+
+        const md = await fetch(api_url, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
@@ -15,21 +19,71 @@
 
     const res = await np();
     // idk what to set this to LMFAO
-    setTimeout(np, 3000000);
+    setTimeout(np, 600000);
+
+    
 ---
-
-<div>
-    <song>
-        <img id="album_art" src={res[0]} width="64px"/>
-        <span id="artist">{res[1]}</span>
-        <span id="track_name">{res[2]}</span>
-        <span id="album">{res[3]}</span>
-    </song>
-</div>
-
+<html>
+    <div class="sultry">
+        luc was last listening to...
+    </div>
+    <div class="song_container">
+        <img id="album_art" src={res[0]} width="50px"/>
+        <song>
+            <div id="artist" class="scroll"><div class="scrollc">{res[1]}</div></div>
+            <div id="track_name" class="scroll"><div class="scrollc">"{res[2]}"</div></div>
+            <div id="album" class="scroll"><div class="scrollc"><i>{res[3]}</i></div></div>
+        </song>
+    </div>
+</html>
 
 <style>
+    div {
+        text-align: center;
+        font-size: .9em;
+    }
+
+    .sultry {
+        text-align: left;
+        font-style: italic;
+        font-size: .8rem;
+        color: #7a6060;
+    }
+
+    .song_container {
+        align-items: center;
+        /* border: 1px solid gold; */
+        border: 1px dashed white;
+        display: flex;
+        flex-direction: row;
+    }
+
     song {
-        border: 2px white;
+        padding: 2px;
+        /* border: 1px solid green; */
+        max-height: 100%;
+        max-width: 100%;
+        min-width: 50%;
+        min-height: 50%;
+    }
+
+    .scroll {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .scrollc {
+        width: fit-content;
+        direction: rtl;
+    }
+
+    @-webkit-keyframes scroll {
+        0% {
+            margin-right: 0%;
+        }
+
+        100% {
+            margin-right: 100%;
+        }
     }
 </style>

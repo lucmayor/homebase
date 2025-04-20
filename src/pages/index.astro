@@ -5,14 +5,30 @@
 
 <Layout heading="home" title="lucsitelucsitelucsitelucsite">
 	<div class="main">
-		hello!
+		hello! my name is luc. you likely know me as <i>alkalde</i>.
 
-		<Lastfm />
+		<div>
+			i will be working on this site over the next week or two...
+		</div>
+
+		<div class="additive">
+			<Lastfm />
+		</div>
 	</div>
 </Layout>
 
 <style>
 	.main {
+		text-wrap: stable;
+		text-align: center;
+		align-items: center;
 		padding: 5px;
+		min-height: 100%;
+	}
+
+	.additive {
+		bottom: 0;
+		align-items: end;
+		padding: 10px;
 	}
 </style>
