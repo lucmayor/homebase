@@ -1,0 +1,62 @@
+---
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+const { heading, title } = Astro.props;
+---
+
+<html>
+    <div class="container">
+        <main>
+            <article>
+                test
+            </article>
+        </main>
+        <Navbar />
+    </div>
+</html>
+
+<style>
+    main {
+        border: 1px dotted blue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 60vh;
+        max-width: 60%;
+        /* min-width: 100%; */
+    }
+    
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    article {
+        width: 80ch;
+        border: 1px solid white;
+        padding: 0.5rem;
+        min-height: 500px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        /* text rel */
+        color: white;
+    }
+
+    .content {
+        grid-area: main;
+        display: grid;
+        grid-template-rows: 1;
+        grid-template-columns: 1;
+        flex-grow: 1;
+    }
+
+    .content > :global(*) {
+        grid-row: 1;
+        grid-column: 1;
+    }
+</style>
