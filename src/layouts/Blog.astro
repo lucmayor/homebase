@@ -1,0 +1,83 @@
+---
+const { frontmatter, title } = Astro.props;
+import "../styles/global.css";
+---
+
+<meta charset="utf-8" />
+<head>
+    <link rel="icon" type="/image/jpg" href="/public/thummm.png" />
+    <title>lucblog — {frontmatter.title}</title>
+</head>
+
+<div class="page">
+    <div class="main">
+        <div class="header">
+            <div class="top">
+                <h1>{frontmatter.title}</h1>
+                <i>{frontmatter.subtitle}</i>
+            </div>
+            <div class="second">
+                &#x1F5D3; <i>start: {frontmatter.startdate?.slice(0,10)} end: {frontmatter.enddate?.slice(0,10)}</i> &#x23F2; <i>{frontmatter.minutesread}</i>
+            </div>
+            <div class="third">
+                <!-- add tags, moods, topics, listening_to -->
+            </div>
+        </div>
+        <slot />
+    </div>
+    <div class="spacelol">
+        <a class="return" href="/blog">...back home</a>
+    </div>
+</div>
+
+<style>
+    * {
+        color: white;
+    }
+
+    h1 {
+        margin:0%;
+    }
+
+    .second {
+        padding-right: 1vh;
+        text-align: right;
+    }
+
+    .header {
+        padding-bottom: 1vh;
+        border-bottom: 1px dotted grey;
+    }
+
+    .spacelol {
+        padding-left: 1vw;
+        padding-top: 1vh;
+    }
+
+    .return {
+        padding-left: 3px;
+        max-height: min-content;
+    }
+
+    .page {
+        display: flex;
+    }
+
+    .main {
+        width: 60vw;
+        height: 95vh;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-width: darkgrey grey;
+        border-right: 1px dotted white;
+        padding-right: 3px;
+        margin-left: 3vw
+    }
+
+    @media screen (max-width: 600px) {
+        .page {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+</style>

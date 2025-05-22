@@ -21,13 +21,13 @@ import Webrings from "./Webrings.astro";
 
 <style>
   div {
-    padding: 1px;
+    padding: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    min-width: 10%;
-    max-width: 10%;
+    min-width: fit-content;
+    max-width: 8vw;
   }
 
   ul {
@@ -74,5 +74,9 @@ import Webrings from "./Webrings.astro";
 
   #statuscafe-content {
     margin: 0 1em 0.5em 1em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    
   }
 </style>

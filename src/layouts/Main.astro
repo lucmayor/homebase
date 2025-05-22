@@ -11,7 +11,9 @@ const { heading, title } = Astro.props;
 <div class="container">
   <main>
     <article>
-      <slot />
+      <!-- <div class="c"> -->
+        <slot />
+      <!-- </div> -->
     </article>
     <div class="creds">
       site developed by <a href="https://twitter.com/FALCO_PLAYER">@FALCO_PLAYER</a> get it twisted.
@@ -22,11 +24,14 @@ const { heading, title } = Astro.props;
 
 <style>
   main {
+    margin: 0%;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     min-height: 60vh;
-    max-width: 60%;
+    width: 45vw;
+    max-width: 50vw;
     /* min-width: 100%; */
   }
 
@@ -45,11 +50,16 @@ const { heading, title } = Astro.props;
   }
 
   article {
-    width: 80ch;
+    width: max-content;
     border: 1px solid white;
+    padding-left: 0%;
+    padding-right: 0%;
     padding: 0.5rem;
+    
     /* girl idk */
     min-height: 80vh;
+    width: 100%;
+    max-width: 43vw;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
