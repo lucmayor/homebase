@@ -74,10 +74,25 @@ import "../styles/global.css";
         margin-left: 3vw
     }
 
-    @media screen (max-width: 600px) {
+    @media only screen and (max-width: 600px) {
         .page {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
+        }
+
+        .main {
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            width: 100%;
+            border-right: none !important;
+        }
+        
+        .spacelol {
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 2px;
+            border-bottom: 1px dotted white;
         }
     }
 </style>

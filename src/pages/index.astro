@@ -13,7 +13,7 @@ import Lastfm from "../components/Lastfm.svelte";
       <Lastfm client:load />
     </div>
 
-    <div>
+    <div class="bottom">
       <a href="https://tyju.cc"><img src="/buttons/tyju-btn.png" /></a>
       <a href="https://goth.zip"><img src="/buttons/gothzip.png" /></a>
       <a href="https://staydown.money"><img src="/buttons/Sprite-0004.png" /></a>
@@ -31,11 +31,16 @@ import Lastfm from "../components/Lastfm.svelte";
 
 <style>
   .main {
-    text-wrap: stable;
     text-align: center;
     align-items: center;
     padding: 5px;
+    /* border: 2px solid brown; */
     min-height: 100%;
+    height: max-content;
+  }
+
+  .bottom {
+    align-items: flex-end;
   }
 
   .additive {
