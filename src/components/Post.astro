@@ -1,0 +1,65 @@
+---
+const { title, url, subtitle, date, readtime } = Astro.props;
+---
+
+<div class="overall">
+    <div class="leftside">
+        <div class="title"><a href={url}>{title}</a></div>
+        <div class="subtext"><i>{subtitle}</i></div>
+    </div>
+    <div class="rightside">
+        <div class="time">&#x23F2; {readtime}</div>
+        <div class="publish">{date}</div>
+    </div>
+</div>
+
+<style>
+    .overall {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px dotted white;
+        min-width: 100%;
+        margin-bottom: 3px;
+        padding-bottom: 3px;
+    }
+
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        min-width: 80%;
+    }
+    
+    .rightside {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        text-align: left;
+        font-size: 2.5ch;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .subtext {
+        text-align: left;
+        font-size: 1.5ch;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .time {
+        text-align: right;
+        font-size: 1.5ch;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .publish {
+        text-align: right;
+        font-size: 1.5ch;
+        padding: 0%;
+        margin: 0%;
+    }
+</style>

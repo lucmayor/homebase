@@ -11,7 +11,9 @@ const { heading, title } = Astro.props;
 <div class="container">
   <main>
     <article>
-      <slot />
+      <!-- <div class="c"> -->
+        <slot />
+      <!-- </div> -->
     </article>
     <div class="creds">
       site developed by <a href="https://twitter.com/FALCO_PLAYER">@FALCO_PLAYER</a> get it twisted.
@@ -29,6 +31,16 @@ const { heading, title } = Astro.props;
     max-width: 60%;
     /* min-width: 100%; */
   }
+
+  /* this sucks and doesn't work */
+  /* .c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid green;
+  } */
 
   .creds {
     padding-top: 2px;
@@ -48,6 +60,7 @@ const { heading, title } = Astro.props;
     width: 80ch;
     border: 1px solid white;
     padding: 0.5rem;
+    
     /* girl idk */
     min-height: 80vh;
     flex-grow: 1;

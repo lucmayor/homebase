@@ -17,7 +17,7 @@
   <div class="wrapper" in:fade>
     <div class="sultry">luc was last listening to...</div>
     <div class="song_container">
-      <img id="album_art" src={res[0]} width="50px" />
+      <img id="album_art" src={res[0]} width="50px" alt="cover art" />
       <song>
         <div id="artist" class="scroll">
           <div class="scrollc">{res[1]}</div>
