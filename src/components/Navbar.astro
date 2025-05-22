@@ -2,25 +2,29 @@
 import Webrings from "./Webrings.astro";
 ---
 
-<div>
+<div class="bigly">
   <img
     src="https://a.ppy.sh/7314046?1744858825.jpeg"
-    width="100px"
-    height="100px"
+    width="90vw"
+    height="90vh"
   />
-  <h>alkalde</h>
-  <ul>
-    <li><a href="/">home</a></li>
-    <li><a href="/about">about</a></li>
-    <li><a href="/projects">projects</a></li>
-    <li><a href="/blog">blog</a></li>
-  </ul>
-  webrings
-  <Webrings />
+  <div>
+    <h>alkalde</h>
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/projects">projects</a></li>
+      <li><a href="/blog">blog</a></li>
+    </ul>
+  </div>
+  <div class="wr">
+    webrings
+    <Webrings />
+  </div>
 </div>
 
 <style>
-  div {
+  .bigly {
     padding: 2vw;
     display: flex;
     flex-direction: column;
@@ -62,6 +66,14 @@ import Webrings from "./Webrings.astro";
     border: 1px solid lightblue;
   }
 
+  .wr {
+    min-width: 80%;
+    padding-top: 0%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   #statuscafe {
     padding: 0.5em;
     border: 1px solid midnightblue;
@@ -77,6 +89,34 @@ import Webrings from "./Webrings.astro";
   }
 
   @media only screen and (max-width: 600px) {
-    
+    .wr {
+      display: none;
+    }
+
+    .bigly {
+      flex-direction: row;
+      /* border: 1px solid green; */
+    }
+
+    img {
+      display: none;
+    }
+
+    h {
+      display: none;
+      /* border: 1px solid gold; */
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      /* border: 1px solid cyan; */
+    }
+
+    li{
+      padding: 0;
+      margin: 1vw;
+      min-width: 0;
+    }
   }
 </style>
