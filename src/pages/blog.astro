@@ -9,7 +9,10 @@ const allPosts = Object.values(
 
 <Layout heading="about me" title="blogblogblogblogblogblogblogblogblog">
 	{
-		allPosts.map((post: any) => <Post url={post.url} title={post.frontmatter.title} subtitle={post.frontmatter.subtitle} date={post.frontmatter.startdate} />)
+		allPosts.map((post: any) => <Post url={post.url} readtime={post.frontmatter.minutesread} title={post.frontmatter.title} subtitle={post.frontmatter.subtitle} date={() => {
+			const temp = post.frontmatter.startdate?.slice(0,10);
+			return temp;
+		}} />)
 	}
 </Layout>
 

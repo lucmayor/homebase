@@ -8,8 +8,16 @@ import "../styles/global.css";
 <div class="page">
     <div class="main">
         <div class="header">
-            <h1>{frontmatter.title}</h1>
-            <i>{frontmatter.subtitle}</i>
+            <div class="top">
+                <h1>{frontmatter.title}</h1>
+                <i>{frontmatter.subtitle}</i>
+            </div>
+            <div class="second">
+                &#x1F5D3; <i>start: {frontmatter.startdate?.slice(0,10)} end: {frontmatter.enddate?.slice(0,10)}</i> &#x23F2; <i>{frontmatter.minutesread}</i>
+            </div>
+            <div class="third">
+                <!-- add tags, moods, topics, listening_to -->
+            </div>
         </div>
         <slot />
     </div>
@@ -25,6 +33,11 @@ import "../styles/global.css";
 
     h1 {
         margin:0%;
+    }
+
+    .second {
+        padding-right: 1vh;
+        text-align: right;
     }
 
     .header {
