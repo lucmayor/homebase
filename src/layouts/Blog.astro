@@ -1,9 +1,13 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter, title } = Astro.props;
 import "../styles/global.css";
 ---
 
 <meta charset="utf-8" />
+<head>
+    <link rel="icon" type="/image/jpg" href="/public/thummm.png" />
+    <title>lucblog — {frontmatter.title}</title>
+</head>
 
 <div class="page">
     <div class="main">
@@ -68,5 +72,12 @@ import "../styles/global.css";
         border-right: 1px dotted white;
         padding-right: 3px;
         margin-left: 3vw
+    }
+
+    @media screen (max-width: 600px) {
+        .page {
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>
